@@ -48,6 +48,18 @@
           #58a 0, #58a 37.5%,
           transparent 0, transparent 50%) 0 / 5em 5em;
     }
+
+    @keyframes ants { to { background-position: 100% } }
+    .box5 {
+      padding: 1em;
+      border: 1px solid transparent;
+      background:
+      linear-gradient(white, white) padding-box,
+      repeating-linear-gradient(-45deg,
+      black 0, black 25%, white 0, white 50%
+      ) 0 / .6em .6em;
+      animation: ants 12s linear infinite;
+    }
   </style>
 </head>
 
@@ -58,6 +70,7 @@
   </div>
   <div class="border-box box3">AAAAAAA</div>
   <div class="border-box box4">AAAAAAA</div>
+  <div class="border-box box5">AAAAAAA</div>
 
 </body>
 
