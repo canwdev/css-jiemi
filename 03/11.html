@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>菱形图片</title>
+  <style>
+    .picture {
+      width: 100px;
+      height: 100px;
+      transform: rotate(45deg);
+      overflow: hidden;
+      margin: 20px;
+    }
+
+    .picture img {
+      width: 100%;
+      height: 100%;
+      transform: rotate(-45deg) scale(1.42); /*sqrt(2)*/
+    }
+
+    .picture2 {
+      display: block;
+      width: 200px;
+      height: 200px;
+      margin: 20px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    /*  它允许我们用一系列(以逗号分隔的)坐标点来指定任意的多边形。*/
+    /*  https://bennettfeely.com/clippy/*/
+      transition: 1s clip-path;
+    }
+    .picture2:hover {
+      clip-path: polygon(0 0, 100% 0,
+      100% 100%, 0 100%);
+    }
+
+  </style>
+</head>
+<body>
+<div class="picture">
+  <img src="../images/square.jpg" alt="">
+</div>
+
+<img class="picture2" src="../images/square.jpg" alt="">
+</body>
+</html>

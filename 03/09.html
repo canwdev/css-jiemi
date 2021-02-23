@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>自适应的椭圆</title>
+  <style>
+    .round-box {
+      width: 100px;
+      height: 100px;
+      background: #ffbb33;
+      margin: 20px;
+    }
+    .box1 {
+      border-radius: 50% / 100% 100% 0 0;
+    }
+    .box2 {
+      border-radius: 100% 0 0 100% / 50%;
+    }
+    .box3 {
+      border-radius: 100% 0 0 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="round-box box1"></div>
+  <div class="round-box box2"></div>
+  <div class="round-box box3"></div>
+</body>
+</html>
