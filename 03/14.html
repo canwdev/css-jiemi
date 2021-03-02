@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>简单的饼图</title>
+  <style>
+    .pie {
+      margin: 50px;
+      display: inline-block;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background-color: yellowgreen;
+      background-image: linear-gradient(to right, transparent 50%, #655 0);
+    }
+
+    .pie::before {
+      content: '';
+      display: block;
+      margin-left: 50%;
+      height: 100%;
+      background-color: inherit;
+      border-radius: 0 100% 100% 0 / 50%;
+      transform-origin: left;
+    }
+
+    .pie.turn-1::before {
+      transform: rotate(.1turn); /* 10 % * 360 deg = 36 deg */
+    }
+
+    .pie.turn-2::before {
+      transform: rotate(.2turn);
+    }
+
+    .pie.turn-4::before {
+      transform: rotate(.4turn);
+    }
+
+    .pie.turn-6::before {
+      transform: rotate(.1turn);
+      background: #665555;
+    }
+
+    .pie.turn-animation::before {
+      animation: spin 3s linear infinite, bg 6s step-end infinite;
+    }
+
+    .pie.turn-auto::before {
+      animation: spin 50s linear infinite, bg 100s step-end infinite;
+      animation-play-state: paused;
+      animation-delay: inherit;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(.5turn)
+      }
+    }
+
+    @keyframes bg {
+      50% {
+        background: #665555;
+      }
+    }
+
+    /*svg*/
+    circle {
+      fill: yellowgreen;
+      stroke: #655;
+      /*stroke-width: 50;*/
+      stroke-width: 32;
+    }
+
+    circle.turn-animation {
+      stroke-dasharray: 0 100;
+      animation: fillup 5s linear infinite;
+    }
+
+    svg {
+      width: 100px;
+      height: 100px;
+      transform: rotate(-90deg);
+      background: yellowgreen;
+      border-radius: 50%;
+    }
+
+    @keyframes fillup {
+      to {
+        stroke-dasharray: 100 100;
+      }
+    }
+
+    /*conic-gradient*/
+    .pie-conic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: conic-gradient(deeppink 20%, #fb3 0, #fb3 30%, yellowgreen 0);
+    }
+  </style>
+</head>
+<body>
+<div class="pie turn-1"></div>
+<div class="pie turn-2"></div>
+<div class="pie turn-4"></div>
+<div class="pie turn-6"></div>
+<div class="pie turn-animation"></div>
+<div class="pie turn-auto" style="animation-delay: -20s"></div>
+<div class="pie turn-auto turn-js">50%</div>
+<div class="pie turn-auto turn-js">60%</div>
+<hr>
+
+<svg viewBox="0 0 32 32">
+  <circle r="16" cx="16" cy="16" class="turn-animation"></circle>
+</svg>
+
+<div class="pie-svg">20%</div>
+<div class="pie-svg">60%</div>
+
+<hr>
+
+<div class="pie-conic"></div>
+
+<script>
+  function $$(selector, context) {
+    context = context || document;
+    var elements = context.querySelectorAll(selector);
+    return Array.prototype.slice.call(elements);
+  }
+
+  $$('.turn-js').forEach(function (pie) {
+    var p = parseFloat(pie.textContent);
+    pie.style.animationDelay = '-' + p + 's';
+  });
+  $$('.pie-svg').forEach(function (pie) {
+    var p = parseFloat(pie.textContent);
+    var NS = "http://www.w3.org/2000/svg";
+    var svg = document.createElementNS(NS, "svg");
+    var circle = document.createElementNS(NS, "circle");
+    var title = document.createElementNS(NS, "title");
+    circle.setAttribute("r", 16);
+    circle.setAttribute("cx", 16);
+    circle.setAttribute("cy", 16);
+    circle.setAttribute("stroke-dasharray", p + " 100");
+    svg.setAttribute("viewBox", "0 0 32 32");
+    title.textContent = pie.textContent;
+    pie.textContent = '';
+    svg.appendChild(title);
+    svg.appendChild(circle);
+    pie.appendChild(svg);
+  });
+
+</script>
+</body>
+</html>
