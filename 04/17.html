@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>染色效果</title>
+
+  <style>
+    .box {
+      margin: 100px auto;
+      display: flex;
+      width: 500px;
+    }
+    .box img{
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+
+    .filter-demo-1 {
+      filter: sepia(1) saturate(4) hue-rotate(295deg);
+      transition: .5s filter;
+    }
+
+    .filter-demo-1:hover {
+      filter: none;
+    }
+
+    .red-bg {
+      background-color: hsl(335, 100%, 50%);
+    }
+
+    .filter-demo-2 {
+      mix-blend-mode: luminosity;
+    }
+
+    .filter-demo-3 {
+      height: 281px;
+      background-size: cover;
+      background-blend-mode: luminosity;
+      transition: .5s background-color;
+    }
+
+    .filter-demo-3:hover   {
+      background-color: transparent;
+    }
+  </style>
+
+</head>
+<body>
+<img class="box filter-demo-1" src="../images/bg.jpg">
+
+<div class="box red-bg">
+  <img class="filter-demo-2" src="../images/bg.jpg">
+</div>
+
+<div class="box red-bg filter-demo-3"
+  style="background-image: url('../images/bg.jpg')"
+>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>单侧投影</title>
+  <style>
+    .box {
+      width: 300px;
+      height: 200px;
+      margin: 100px auto;
+      background: #ffbb33;
+    }
+
+    .shadow-1 { box-shadow: 0 5px 4px -4px black; }
+    .shadow-2 { box-shadow: 3px 3px 6px -3px black; }
+    .shadow-3 { box-shadow: 5px 0 5px -5px black, -5px 0 5px -5px black; }
+  </style>
+</head>
+<body>
+  <div class="box shadow-1"></div>
+  <div class="box shadow-2"></div>
+  <div class="box shadow-3"></div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>毛玻璃效果</title>
+  <style>
+    .bg-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      margin: 100px auto;
+      width: 800px;
+      height: 600px;
+      background: url("../images/bg.jpg") no-repeat center/cover;
+    }
+    .box {
+      position: relative;
+      z-index: 1;
+      background: hsla(0, 0%, 100%, .3);
+      padding: 50px;
+      width: 60%;
+      height: 60%;
+      font-size: 145%;
+      box-shadow: 0 10px 10px -5px black;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .simulate-blur {
+      color: white;
+    }
+
+    .simulate-blur::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      margin: -30px;
+      /*background: rgba(255,0,0,.5);*/
+      background: url("../images/bg.jpg") no-repeat center;
+      background-size: 1066px;
+      filter: blur(20px);
+    }
+
+    .real-blur {
+      backdrop-filter: blur(2s0px);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-container">
+    <div class="box simulate-blur">在传统的平面设计中,这个问题的解决方案通常是把文本层所覆盖的那
+      部分图片区域作模糊处理。模糊的背景看起来不那么花哨,因此在它之上的
+      文本就相对比较易读了。过去,由于模糊运算的性能消耗极其巨大,以致于
+      这个技巧在网页设计和 UI 设计中鲜有用武之地。不过,随着 GPU 的不断进
+      化以及硬件加速的不断普及,眼下这个技巧已经逐渐流行起来。在过去这几
+      年里,我们已经可以在较新的 Microsoft Windows 系统中看到这个技巧的身
+      影,而苹果的 iOS 和 Mac OS X 操作系统也不例外。</div>
+  </div>
+
+  <div class="bg-container">
+    <div class="box real-blur">在传统的平面设计中,这个问题的解决方案通常是把文本层所覆盖的那
+      部分图片区域作模糊处理。模糊的背景看起来不那么花哨,因此在它之上的
+      文本就相对比较易读了。过去,由于模糊运算的性能消耗极其巨大,以致于
+      这个技巧在网页设计和 UI 设计中鲜有用武之地。不过,随着 GPU 的不断进
+      化以及硬件加速的不断普及,眼下这个技巧已经逐渐流行起来。在过去这几
+      年里,我们已经可以在较新的 Microsoft Windows 系统中看到这个技巧的身
+      影,而苹果的 iOS 和 Mac OS X 操作系统也不例外。</div>
+  </div>
+</body>
+</html>
