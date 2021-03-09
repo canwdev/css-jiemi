@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>调整 tab 的宽度</title>
+  <style>
+    pre {
+      font-family: monospace;
+      padding: .5em;
+      line-height: 1.5;
+      background: black;
+      color: #0f0;
+      tab-size: 10;
+    }
+  </style>
+</head>
+<body>
+<pre>
+function copyToClip(content) {
+	var aux = document.createElement("input");
+		aux.setAttribute("value", content);
+			document.body.appendChild(aux);
+  		aux.select();
+		document.execCommand("copy");
+	document.body.removeChild(aux);
+}
+</pre>
+</body>
+</html>

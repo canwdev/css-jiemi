@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>折角效果</title>
+  <style>
+    .box {
+      position: relative;
+      margin: 50px;
+      padding: 50px;
+      width: 220px;
+      color: white;
+      background: #5588aa;
+    }
+
+    .style1 {
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 2em 2em, linear-gradient(-135deg, transparent 1.4em, #58a 0);
+    }
+
+    /*.style2 {
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.4) 0) no-repeat 100% 0 / 3em 1.73em, linear-gradient(-150deg, transparent 1.4em, #58a 0);
+    }*/
+
+
+    .style2 {
+      background: linear-gradient(-150deg, transparent 1.4em, #58a 0);
+      border-radius: .5em;
+    }
+    .style2::before {
+      position: absolute;
+      content: '';
+      top: 0;
+      right: 0;
+      background: linear-gradient(to left bottom, transparent 50%, rgba(0,0,0,.2) 0, rgba(0,0,0,.4)) no-repeat 100% 0;
+      width: 1.73em;
+      height: 3em;
+      transform: translateY(-1.3em) rotate(-30deg);
+      transform-origin: bottom right;
+      border-bottom-left-radius: inherit;
+      box-shadow: -.2em .2em .3em -.1em rgba(0,0,0,.15);
+    }
+  </style>
+</head>
+<body>
+  <div class="box style1">我们会从一个右上角具有斜面切角的元素开始,这个切角是由“切角效
+    果”一节中的渐变方案实现的。要用这个技巧在右上角创建一个大小为 1em
+    的斜面切角,代码会是这样的</div>
+
+  <div class="box style2">我们会从一个右上角具有斜面切角的元素开始,这个切角是由“切角效
+    果”一节中的渐变方案实现的。要用这个技巧在右上角创建一个大小为 1em
+    的斜面切角,代码会是这样的</div>
+</body>
+</html>

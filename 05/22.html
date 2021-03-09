@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>文本行的斑马条纹</title>
+  <style>
+    pre {
+      font-family: monospace;
+      padding: .5em;
+      line-height: 1.5;
+      background: beige;
+      background-image: linear-gradient(rgba(0,0,0,.2) 50%, transparent 0);
+      background-size: auto 3em;
+      background-origin: content-box;
+      tab-size: 0;
+
+    }
+  </style>
+</head>
+<body>
+<pre>
+.box {
+  margin: 50px;
+  width: 200px;
+  border: 1px solid red;
+  font-size: 25px;
+  line-height: 1.5;
+  hyphens: auto;
+}
+</pre>
+</body>
+</html>

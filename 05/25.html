@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>华丽的 & 符号</title>
+
+  <style>
+    @font-face {
+      font-family: Ampersand;
+      src: local('Baskerville-Italic'),
+      local('GoudyOldStyleT-Italic'),
+      local('Palatino-Italic'),
+      local('BookAntiqua-Italic');
+      unicode-range: U+26;
+    }
+
+    .box {
+      font-family: Ampersand, Helvetica, sans-serif;
+      margin: 50px;
+      font-size: 100px;
+    }
+
+    .amp {
+      font-family: Baskerville, "Goudy Old Style", Garamond, Palatino, serif;
+      font-style: italic;
+      color: red;
+    }
+  </style>
+</head>
+<body>
+<p>实际上我们常用的简写 and 符号(&)最开始就是字母 E 和 t 的连字(et 在拉丁文中就是 and 的意思)。</p>
+
+<div class="box">HTML <span class="amp">&amp;</span> CSS</div>
+
+</body>
+</html>
