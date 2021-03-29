@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>选用合适的鼠标光标</title>
+  <style>
+    button {
+      font-size: 10em;
+    }
+    :disabled, [disabled], [aria-disabled="true"] {
+      cursor: not-allowed;
+    }
+    .cursor-none {
+      cursor: none;
+    }
+  </style>
+</head>
+<body>
+  <button disabled>Not Allowed</button>
+  <button class="cursor-none">Cursor None</button>
+</body>
+</html>

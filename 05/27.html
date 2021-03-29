@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>现实中的文字效果</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: sans;
+    }
+
+    .text-1 {
+      font-size: 30px;
+      padding: 10px;
+    }
+
+    .text-2 {
+      font-size: 90px;
+      padding: 10px;
+      font-weight: bold;
+    }
+
+    .style-1 {
+      background: hsl(210, 13%, 60%);
+      color: hsl(210, 13%, 30%);
+      text-shadow: 0 .03em .03em hsla(0, 0%, 100%, .8);
+    }
+
+    .style-2 {
+      background: hsl(210, 13%, 40%);
+      color: hsl(210, 13%, 75%);
+      text-shadow: 0 -1px 1px black;
+    }
+
+    .style-3 {
+      background: deeppink;
+      color: white;
+      text-shadow: 3px 3px black, -3px -3px black,
+      3px -3px black, -3px 3px black;
+      letter-spacing: .2em;
+    }
+
+    .style-4 {
+      background: deeppink;
+      color: white;
+      letter-spacing: .2em;
+    }
+
+    .style-4 text {
+      fill: currentColor;
+    }
+
+    .style-4 svg {
+      overflow: visible
+    }
+
+    .style-4 use {
+      stroke: black;
+      stroke-width: 10;
+      stroke-linejoin: round;
+    }
+
+    .style-5 {
+      background: #203;
+      color: #ffc;
+      text-shadow: 0 0 .1em, 0 0 .3em;
+
+    }
+
+    .style-6 {
+      background: #203;
+      color: white;
+      transition: 1s;
+      text-shadow: 0 0 .1em, 0 0 .3em;
+    }
+
+    .style-6:hover {
+      color: transparent;
+      text-shadow: 0 0 .1em white, 0 0 .3em white;
+    }
+
+    .style-7 {
+      background: #58a;
+      color: white;
+      text-shadow: 0 1px hsl(0, 0%, 85%),
+      0 2px hsl(0, 0%, 80%),
+      0 3px hsl(0, 0%, 75%),
+      0 4px hsl(0, 0%, 70%),
+      0 5px hsl(0, 0%, 65%),
+      0 5px 10px black;
+    }
+
+    .style-8 {
+      color: white;
+      background: hsl(0, 50%, 45%);
+      text-shadow: 1px 1px black,
+      2px 2px black,
+      3px 3px black,
+      4px 4px black,
+      5px 5px black,
+      6px 6px black,
+      7px 7px black,
+      8px 8px black,
+      9px 9px black,
+      10px 10px black;
+    }
+
+  </style>
+</head>
+<body>
+<div class="text-1 style-1">“The only way to get rid of a temptation is to yield to it.”</div>
+<div class="text-1 style-2">“The only way to get rid of a temptation is to yield to it.”</div>
+<div class="text-2 style-3">CSS</div>
+<div class="text-2 style-4">
+  <svg width="2em" height="1.2em">
+    SVG
+    <use xlink:href="#css"/>
+    <text id="css" y="1em">CSS</text>
+  </svg>
+</div>
+<div class="text-2 style-5">Glow</div>
+<div>⬇⬇ hover me ⬇⬇️</div>
+<div class="text-2 style-6">Dizzy</div>
+<div class="text-2 style-7">CSS3d</div>
+<div class="text-2 style-8">RETRO</div>
+
+</body>
+</html>

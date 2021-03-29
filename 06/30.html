@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>扩大可点击区域</title>
+
+  <style>
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100px;
+      height: 100px;
+      font-size: 5em;
+      background: #5588aa;
+      color: white;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .mode-1 {
+      border: 30px solid transparent;
+      background-clip: padding-box;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .3) inset;
+    }
+
+    .mode-2 {
+      margin-left: 50px;
+      position: relative;
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, .3) inset,
+      0 .1em .2em -.05em rgba(0, 0, 0, .5);
+    }
+
+    .mode-2:before {
+      content: '';
+      position: absolute;
+      top: -30px;
+      right: -30px;
+      bottom: -30px;
+      left: -30px;
+    }
+  </style>
+</head>
+<body>
+<div class="btn mode-1" onclick="alert('clicked 1')">+</div>
+
+<div class="btn mode-2" onclick="alert('clicked 2')">+</div>
+</body>
+</html>
